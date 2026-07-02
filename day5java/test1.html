@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Effect</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #f4f4f4;
+}
+
+#box{
+    width: 250px;
+    height: 120px;
+    background-color: #0077cc;
+    color: white;
+    line-height: 120px;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Hover Effect Example</h2>
+
+<div id="box">Hover Over Me</div>
+
+<script>
+const box = document.getElementById("box");
+
+box.addEventListener("mouseover", function() {
+    box.style.backgroundColor = "green";
+    box.style.transform = "scale(1.1)";
+    box.innerHTML = "Mouse Over!";
+});
+
+box.addEventListener("mouseout", function() {
+    box.style.backgroundColor = "#0077cc";
+    box.style.transform = "scale(1)";
+    box.innerHTML = "Hover Over Me";
+});
+</script>
+
+</body>
+</html>
