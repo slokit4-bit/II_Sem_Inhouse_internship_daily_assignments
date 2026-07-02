@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f2f2f2;
+    }
+    .container{
+        width:400px;
+        margin:0px auto;
+        background:white;
+        padding:20px;
+        border-radius:20px;
+        box-shadow:0 0 10px gray;
+    }
+    h2{
+        text-align:center;
+    }
+    input, select{
+        width:100%;
+        padding:8px;
+        margin:8px 0;
+    }
+    .gender{
+        width:auto;
+    }
+    button{
+        width:100%;
+        padding:10px;
+        background:green;
+        color:white;
+        border:none;
+        cursor:pointer;
+        font-size:16px;
+    }
+    button:hover{
+        background:darkgreen;
+    }
+    .error{
+        color:red;
+        font-size:14px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Registration Form</h2>
+
+<form id="regForm">
+
+<label>Full Name</label>
+<input type="text" id="name">
+<span class="error" id="nameError"></span>
+
+<label>Email</label>
+<input type="email" id="email">
+<span class="error" id="emailError"></span>
+
+<label>Mobile Number</label>
+<input type="text" id="mobile">
+<span class="error" id="mobileError"></span>
+
+<label>Password</label>
+<input type="password" id="password">
+<span class="error" id="passwordError"></span>
+
+<label>Confirm Password</label>
+<input type="password" id="confirmPassword">
+<span class="error" id="confirmError"></span>
+
+<label>Gender</label><br>
+
+<input class="gender" type="radio" name="gender" value="Male"> Male
+<input class="gender" type="radio" name="gender" value="Female"> Female
+<br>
+<span class="error" id="genderError"></span>
+
+<br><br>
+
+<input class="gender" type="checkbox" id="terms">
+I accept Terms & Conditions
+<br>
+<span class="error" id="termsError"></span>
+
+<br>
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("regForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+document.querySelectorAll(".error").forEach(error => error.innerHTML="");
+
+let name=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let mobile=document.getElementById("mobile").value.trim();
+let password=document.getElementById("password").value;
+let confirm=document.getElementById("confirmPassword").value;
+let gender=document.querySelector('input[name="gender"]:checked');
+let terms=document.getElementById("terms").checked;
+
+let valid=true;
+
+// Name Validation
+let namePattern=/^[A-Za-z ]+$/;
+
+if(name==""){
+    document.getElementById("nameError").innerHTML="Name is required";
+    valid=false;
+}
+else if(!namePattern.test(name)){
+    document.getElementById("nameError").innerHTML="Only letters allowed";
+    valid=false;
+}
+
+// Email Validation
+let emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if(email==""){
+    document.getElementById("emailError").innerHTML="Email is required";
+    valid=false;
+}
+else if(!emailPattern.test(email)){
+    document.getElementById("emailError").innerHTML="Invalid Email";
+    valid=false;
+}
+
+// Mobile Validation
+let mobilePattern=/^[0-9]{10}$/;
+
+if(!mobilePattern.test(mobile)){
+    document.getElementById("mobileError").innerHTML="Enter 10 digit mobile number";
+    valid=false;
+}
+
+// Password Validation
+if(password.length<8){
+    document.getElementById("passwordError").innerHTML="Password must be at least 8 characters";
+    valid=false;
+}
+
+// Confirm Password
+if(password!=confirm){
+    document.getElementById("confirmError").innerHTML="Passwords do not match";
+    valid=false;
+}
+
+// Gender Validation
+if(!gender){
+    document.getElementById("genderError").innerHTML="Select Gender";
+    valid=false;
+}
+
+// Terms Validation
+if(!terms){
+    document.getElementById("termsError").innerHTML="Accept Terms & Conditions";
+    valid=false;
+}
+
+// Success
+if(valid){
+    alert("Registration Successful!");
+    document.getElementById("regForm").reset();
+}
+
+});
+
+</script>
+
+</body>
+</html>

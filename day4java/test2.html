@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Events Demo</title>
+</head>
+<body>
+
+    <button id="myBtn">Click Me</button>
+    <p id="display">Clicks: 0</p>
+
+    <br><br>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <h2 id="greeting">Hi,</h2>
+
+    <script>
+        // Click event – the most common
+        const btn = document.querySelector("#myBtn");
+
+        btn.addEventListener("click", function () {
+            let count = parseInt(btn.dataset.count || 0);
+
+            count++;
+
+            btn.dataset.count = count;
+
+            document.querySelector("#display").textContent =
+                `Clicks: ${count}`;
+        });
+
+        // Input event – fires on every keystroke
+        document.querySelector("#nameInput").addEventListener("input", (e) => {
+            document.querySelector("#greeting").textContent =
+                `Hi, ${e.target.value}`;
+        });
+    </script>
+
+</body>
+</html>
