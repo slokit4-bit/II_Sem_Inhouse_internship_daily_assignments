@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fb;
+            color: #333;
+        }
+        header {
+            background: #2b6cb0;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        header p {
+            margin: 8px 0 0;
+            font-size: 1rem;
+        }
+        .navbar {
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar-brand {
+            color: #2b6cb0;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .navbar-brand:hover,
+        .navbar-brand:focus {
+            color: #1d4f8f;
+        }
+        .navbar-nav .nav-link {
+            color: #2b6cb0;
+            font-weight: bold;
+            margin: 0 8px;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #1d4f8f;
+            text-decoration: underline;
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px 50px;
+        }
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+        section h2 {
+            margin-top: 0;
+            color: #2b6cb0;
+        }
+        .profile-list,
+        .education-list,
+        .experience-list,
+        .project-list,
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .profile-list li,
+        .education-list li,
+        .experience-list li,
+        .project-list li,
+        .contact-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eceff4;
+        }
+        .profile-list li:last-child,
+        .education-list li:last-child,
+        .experience-list li:last-child,
+        .project-list li:last-child,
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+        .project-list li {
+            margin-bottom: 12px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>lokit vashistha</h1>
+        <p>Beginner Portfolio | Web Developer | Student</p>
+    </header>
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">lokit vashistha</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm lokit vashistha, a beginner web developer and student. I love coding, design, and learning new things.</p>
+            <ul class="profile-list">
+                <li><strong>Name:</strong> lokit vashistha</li>
+                <li><strong>Goal:</strong>became a good engineer</li>
+                <li><strong>Hobby:</strong> Coding , design,learning new things</li>
+            </ul>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <ul class="education-list">
+                <li>
+                    <strong>College:</strong>skit<br>
+                    <strong>Course:</strong>btech 2nd year<br>
+                    <strong>year:</strong> 2025 batch
+                </li>
+                <li>
+                    <strong>Specialization:</strong> Computer Science , Web Development
+                </li>
+            </ul>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <ul class="experience-list">
+                <li>
+                    <strong>Internship / Project:</strong> Web Development Internship<br>
+                    <strong>Details:</strong>html5, css3<br>
+                    
+                </li>
+                <li>
+                    <strong>Self Learning:</strong> Online courses,self improvement ,self practice<br>
+                </li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul class="project-list">
+                <li>
+                    <strong>Personal Portfolio Website</strong><br>
+                    A personal portfolio website showcasing my skills, projects, and contact information.
+                </li>
+                <li>
+                    <strong>Simple Login and Application Form for Student</strong><br>
+                    
+                </li>
+                <li>
+
+                    <strong>To-Do List App</strong><br>
+                    Became a simple to-do list application using HTML, CSS, and JavaScript to manage tasks effectively.
+                </li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>contact me on </p>
+            <ul class="contact-list">
+                <li><strong>Email:</strong> lokitvashistha@example.com</li>
+                <li><strong>Phone:</strong> +91 12345 67890</li>
+                <li><strong>Address:</strong>india </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 lokit vashistha. thanks for visiting!</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
