@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Forward 2026 | Event Registration</title>
+    <style>
+        :root {
+            --ink: #17202a;
+            --muted: #5f6f7c;
+            --paper: #f8faf9;
+            --line: #d9e2df;
+            --green: #0f7b5f;
+            --green-dark: #0a5845;
+            --gold: #d79f2b;
+            --coral: #d95d4e;
+            --white: #ffffff;
+            --shadow: 0 18px 45px rgba(23, 32, 42, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 18px 7vw;
+            background: rgba(248, 250, 249, 0.92);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(14px);
+        }
+
+        .brand {
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: var(--green);
+        }
+
+        .header-button,
+        .primary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 18px;
+            border: 0;
+            border-radius: 6px;
+            background: var(--green);
+            color: var(--white);
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .header-button:hover,
+        .primary-button:hover {
+            background: var(--green-dark);
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            min-height: calc(100vh - 76px);
+            display: grid;
+            align-items: center;
+            padding: 70px 7vw 52px;
+            background:
+                linear-gradient(90deg, rgba(8, 27, 31, 0.84), rgba(8, 27, 31, 0.48)),
+                url("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1800&q=80") center/cover;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 18px;
+            color: #f4d891;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.45rem, 7vw, 5.8rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+        }
+
+        .hero p {
+            max-width: 660px;
+            margin: 24px 0 30px;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: clamp(1.02rem, 2vw, 1.25rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .ghost-link {
+            font-weight: 800;
+            color: var(--white);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .event-strip {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1px;
+            background: var(--line);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .strip-item {
+            min-height: 108px;
+            padding: 24px 7vw;
+            background: var(--white);
+        }
+
+        .strip-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .strip-item strong {
+            display: block;
+            margin-top: 6px;
+            font-size: 1.15rem;
+        }
+
+        .section {
+            padding: 74px 7vw;
+        }
+
+        .section-title {
+            max-width: 720px;
+            margin: 0 0 34px;
+        }
+
+        .section-title h2 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            line-height: 1.05;
+        }
+
+        .section-title p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .detail-card {
+            min-height: 230px;
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+        }
+
+        .detail-card h3 {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+        }
+
+        .detail-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .countdown-band {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+            gap: 36px;
+            align-items: center;
+            padding: 58px 7vw;
+            background: #18362f;
+            color: var(--white);
+        }
+
+        .countdown-band h2 {
+            margin: 0 0 10px;
+            font-size: clamp(1.9rem, 4vw, 3rem);
+        }
+
+        .countdown-band p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .timer {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(74px, 1fr));
+            gap: 12px;
+        }
+
+        .time-box {
+            min-height: 104px;
+            display: grid;
+            place-items: center;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .time-box strong {
+            display: block;
+            font-size: clamp(1.8rem, 4vw, 2.75rem);
+            line-height: 1;
+        }
+
+        .time-box span {
+            display: block;
+            margin-top: 8px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .registration {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(300px, 1.15fr);
+            gap: 40px;
+            align-items: start;
+            background: var(--white);
+        }
+
+        .registration-copy {
+            position: sticky;
+            top: 104px;
+        }
+
+        .registration-copy h2 {
+            margin: 0 0 16px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.06;
+        }
+
+        .registration-copy p {
+            margin: 0 0 24px;
+            color: var(--muted);
+        }
+
+        .seat-note {
+            display: inline-flex;
+            padding: 10px 14px;
+            border-left: 4px solid var(--coral);
+            background: #fff3f1;
+            color: #833127;
+            font-weight: 700;
+        }
+
+        .form-panel {
+            padding: 30px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fbfdfc;
+            box-shadow: var(--shadow);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: 800;
+            font-size: 0.92rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-height: 48px;
+            padding: 12px 13px;
+            border: 1px solid #c8d6d1;
+            border-radius: 6px;
+            background: var(--white);
+            color: var(--ink);
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 3px solid rgba(15, 123, 95, 0.18);
+            border-color: var(--green);
+        }
+
+        .error {
+            min-height: 18px;
+            color: #b42318;
+            font-size: 0.82rem;
+        }
+
+        .form-footer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        .success-message {
+            display: none;
+            padding: 14px 16px;
+            border-radius: 6px;
+            background: #e9f8ef;
+            color: #14532d;
+            font-weight: 800;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        footer {
+            padding: 28px 7vw;
+            background: var(--ink);
+            color: rgba(255, 255, 255, 0.74);
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+
+            .event-strip,
+            .details-grid,
+            .countdown-band,
+            .registration {
+                grid-template-columns: 1fr;
+            }
+
+            .registration-copy {
+                position: static;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .site-header,
+            .section,
+            .hero,
+            .countdown-band {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            .event-strip {
+                display: block;
+            }
+
+            .strip-item {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            .timer,
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .field.full {
+                grid-column: 1 / -1;
+            }
+
+            .form-panel {
+                padding: 22px;
+            }
+
+            .header-button {
+                display: none;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .timer,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#">Future Forward 2026</a>
+        <nav class="nav" aria-label="Main navigation">
+            <a href="#details">Details</a>
+            <a href="#schedule">Highlights</a>
+            <a href="#register">Register</a>
+        </nav>
+        <a class="header-button" href="#register">Book Seat</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Upcoming Event - 10 July 2026</p>
+                <h1>Future Forward 2026</h1>
+                <p>Join founders, students, creators, and technology leaders for an energetic day of talks, networking, and hands-on sessions.</p>
+                <div class="hero-actions">
+                    <a class="primary-button" href="#register">Register Now</a>
+                    <a class="ghost-link" href="#details">View Event Details</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="event-strip" id="details" aria-label="Event quick details">
+            <div class="strip-item">
+                <span>Date</span>
+                <strong>10 July 2026</strong>
+            </div>
+            <div class="strip-item">
+                <span>Time</span>
+                <strong>10:00 AM - 5:00 PM</strong>
+            </div>
+            <div class="strip-item">
+                <span>Venue</span>
+                <strong>Innovation Hall, New Delhi</strong>
+            </div>
+            <div class="strip-item">
+                <span>Entry</span>
+                <strong>Free with registration</strong>
+            </div>
+        </section>
+
+        <section class="section" id="schedule">
+            <div class="section-title">
+                <h2>What to expect</h2>
+                <p>A focused event designed for people who want practical ideas, useful contacts, and a clear look at what is coming next.</p>
+            </div>
+
+            <div class="details-grid">
+                <article class="detail-card">
+                    <h3>Expert Sessions</h3>
+                    <p>Hear from experienced speakers on AI tools, product strategy, career growth, and real-world innovation.</p>
+                </article>
+                <article class="detail-card">
+                    <h3>Live Workshops</h3>
+                    <p>Participate in guided activities and leave with practical templates, workflows, and next steps.</p>
+                </article>
+                <article class="detail-card">
+                    <h3>Networking</h3>
+                    <p>Meet peers, mentors, recruiters, and collaborators during dedicated networking breaks.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="countdown-band" aria-label="Countdown to event">
+            <div>
+                <h2>Registration closes soon</h2>
+                <p>Secure your seat before the event begins on 10 July 2026.</p>
+            </div>
+            <div class="timer">
+                <div class="time-box">
+                    <strong id="days">00</strong>
+                    <span>Days</span>
+                </div>
+                <div class="time-box">
+                    <strong id="hours">00</strong>
+                    <span>Hours</span>
+                </div>
+                <div class="time-box">
+                    <strong id="minutes">00</strong>
+                    <span>Minutes</span>
+                </div>
+                <div class="time-box">
+                    <strong id="seconds">00</strong>
+                    <span>Seconds</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section registration" id="register">
+            <div class="registration-copy">
+                <h2>Reserve your seat</h2>
+                <p>Fill out the form and our team will send confirmation details to your email.</p>
+                <div class="seat-note">Limited seats available</div>
+            </div>
+
+            <form class="form-panel" id="registrationForm" novalidate>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="fullName">Full name</label>
+                        <input id="fullName" name="fullName" type="text" autocomplete="name" required>
+                        <span class="error" id="fullNameError"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required>
+                        <span class="error" id="emailError"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone number</label>
+                        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+                        <span class="error" id="phoneError"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="category">Registration type</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select type</option>
+                            <option>Student</option>
+                            <option>Professional</option>
+                            <option>Founder</option>
+                            <option>Guest</option>
+                        </select>
+                        <span class="error" id="categoryError"></span>
+                    </div>
+
+                    <div class="field full">
+                        <label for="message">What are you most interested in?</label>
+                        <textarea id="message" name="message" placeholder="Sessions, workshops, networking, hiring, partnerships..."></textarea>
+                        <span class="error" id="messageError"></span>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <button class="primary-button" type="submit">Submit Registration</button>
+                    <div class="success-message" id="successMessage" role="status">Registration received. See you on 10 July!</div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        Future Forward 2026 - 10 July 2026 - Innovation Hall, New Delhi
+    </footer>
+
+    <script>
+        const eventDate = new Date("2026-07-10T10:00:00+05:30").getTime();
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minutesEl = document.getElementById("minutes");
+        const secondsEl = document.getElementById("seconds");
+
+        function pad(value) {
+            return String(value).padStart(2, "0");
+        }
+
+        function updateCountdown() {
+            const now = Date.now();
+            const distance = Math.max(eventDate - now, 0);
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((distance / (1000 * 60)) % 60);
+            const seconds = Math.floor((distance / 1000) % 60);
+
+            daysEl.textContent = pad(days);
+            hoursEl.textContent = pad(hours);
+            minutesEl.textContent = pad(minutes);
+            secondsEl.textContent = pad(seconds);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        const form = document.getElementById("registrationForm");
+        const successMessage = document.getElementById("successMessage");
+
+        const fields = {
+            fullName: document.getElementById("fullName"),
+            email: document.getElementById("email"),
+            phone: document.getElementById("phone"),
+            category: document.getElementById("category"),
+            message: document.getElementById("message")
+        };
+
+        function setError(fieldName, message) {
+            document.getElementById(fieldName + "Error").textContent = message;
+        }
+
+        function validateForm() {
+            let isValid = true;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phonePattern = /^[0-9+\-\s()]{7,16}$/;
+
+            Object.keys(fields).forEach(function(fieldName) {
+                setError(fieldName, "");
+            });
+
+            if (fields.fullName.value.trim().length < 2) {
+                setError("fullName", "Please enter your full name.");
+                isValid = false;
+            }
+
+            if (!emailPattern.test(fields.email.value.trim())) {
+                setError("email", "Please enter a valid email address.");
+                isValid = false;
+            }
+
+            if (!phonePattern.test(fields.phone.value.trim())) {
+                setError("phone", "Please enter a valid phone number.");
+                isValid = false;
+            }
+
+            if (!fields.category.value) {
+                setError("category", "Please choose a registration type.");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            successMessage.classList.remove("show");
+
+            if (!validateForm()) {
+                return;
+            }
+
+            successMessage.classList.add("show");
+            form.reset();
+        });
+    </script>
+</body>
+</html>
